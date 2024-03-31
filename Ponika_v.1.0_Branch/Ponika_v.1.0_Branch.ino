@@ -119,7 +119,6 @@ void loop()
       if(receive_data.substring(1,4) == BRANCHNAME)
         {
           data = get_all_data();
-          //lcd.print("Goooood");
           send_message("S" + BRANCHNAME + data);
           count = 0;
         }
@@ -203,16 +202,20 @@ String ground(int sensor)
   if(sensor >= 1000)
   {
     sensor = 0;
-    //lcd.print(sensor);
   }
   else
   {
     sensor = 1000 - sensor;
     sensor = map(sensor, 1, 1000, 1, 100);
-    //lcd.print(sensor);
   }
-  //lcd.print("%");
-  //return ((String)sensor + "%");
+  if(sensor < 10)
+  {
+    return "0" + (String)sensor;
+  }
+  else
+  {
+    return (String)sensor;
+  }
   return (String)sensor;
 }
 
