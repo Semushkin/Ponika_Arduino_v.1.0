@@ -110,16 +110,16 @@ String receive_message()
 void LCDPrint()
 {
   lcd.print(receive_data.substring(4, 6));
-  lcd.print("%");
+  lcd.print(" ");
   lcd.print(receive_data.substring(6, 8));
-  lcd.print("%");
+  lcd.print(" ");
   lcd.print(receive_data.substring(8, 10));
-  lcd.print("%");
-  lcd.setCursor(0, 1);
+  lcd.print(" ");
+  //lcd.setCursor(0, 1);
   lcd.print(receive_data.substring(10, 12));
-  lcd.print("%");
+  lcd.print(" ");
   lcd.print(receive_data.substring(12, 14));
-  lcd.print("%");
+  lcd.print(" ");
   lcd.print(receive_data.substring(14, 16));
-  lcd.print("%");  
+  lcd.print(" ");  
 }

@@ -90,13 +90,11 @@ void loop()
     btnFitoOld = 1;
     if (statusFitoLight == true)
     {
-      //lcd.setBacklight(0);
       digitalWrite(fitoPower, LOW);
       statusFitoLight = false;
     }
     else
     {
-      //lcd.setBacklight(1);
       digitalWrite(fitoPower, HIGH);
       statusFitoLight = true;
     }
