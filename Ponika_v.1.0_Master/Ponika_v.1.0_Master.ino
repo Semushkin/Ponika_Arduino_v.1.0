@@ -58,12 +58,40 @@ void loop() {
 
   if(Serial.available()>0)
   {
-    lcd.clear();
-    lcd.setCursor(0, 0);
     receive_data = receive_message();
-    if(receive_data.length() > 16 && receive_data.substring(0, 1) == "S")
+    if(receive_data.length() > 16)
     {
-      LCDPrint();
+      if(receive_data.substring(0, 1) == "S")
+      {
+        if(receive_data.substring(1, 4) == "123")
+        {
+          lcd.setCursor(0, 0);
+          lcd.print("              "); 
+          lcd.setCursor(0, 0);
+          LCDPrint();
+        }
+        if(receive_data.substring(1, 4) == "124")
+        {
+          lcd.setCursor(0, 1);
+          lcd.print("              "); 
+          lcd.setCursor(0, 1);
+          LCDPrint();
+        }
+        if(receive_data.substring(1, 4) == "125")
+        {
+          lcd.setCursor(0, 2);
+          lcd.print("              "); 
+          lcd.setCursor(0, 2);
+          LCDPrint();
+        }
+        if(receive_data.substring(1, 4) == "126")
+        {
+          lcd.setCursor(0, 3);
+          lcd.print("              "); 
+          lcd.setCursor(0, 3);
+          LCDPrint();
+        }
+      }
     }
   }
 
